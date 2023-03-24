@@ -1,1 +1,1 @@
-console.log("I exist!");
+(()=>{"use strict";console.log("I exist!")})();
