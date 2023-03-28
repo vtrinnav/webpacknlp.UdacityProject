@@ -5,6 +5,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports={
     mode: 'production',
+    devtool: 'source-map',
     entry: './src/client/index.js',
     stats: 'verbose', 
     module: {
