@@ -35,8 +35,8 @@ app.get('/test', function(req,res){
 });
 
 //server
-app.listen(8081, function(){
-    console.log('app listning on port 8081!')
+app.listen(3000, function(){
+    console.log('app listning on port 3000!')
 });
 
 
