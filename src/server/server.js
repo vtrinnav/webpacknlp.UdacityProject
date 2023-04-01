@@ -5,7 +5,8 @@ var path = require('path');
 const express = require('express');
 const mockAPIResponse=require('./mockAPI');
 const bodyParser = require('body-parser');
-const fetch = require('node-fetch');
+
+import('node-fetch');
 
 //instance of app
 const app = express();
@@ -26,12 +27,25 @@ const apiKey = process.env.API_KEY
 console.log('Your API Key is ${process.env.API_KEY}');
 let userInput = []
 
+//GET Route
 app.get('/', function(req,res){
     res.sendFile('dist/index.html')
 });
 
 app.get('/test', function(req,res){
     res.send(mockAPIResponse)
+});
+
+//POST Route
+app.post('/api', async function(req,res){
+    userInput = req.body.url;
+    console.log('url entered: ${userInput}');
+    const apiURL = '${baseURL}Key=${apiKey}&url=${userInput}&lang=en';
+
+    const response = await fetch(apiURL);
+    const data = await response.json();
+    console.log(data);
+    res.send(data);
 });
 
 //server
