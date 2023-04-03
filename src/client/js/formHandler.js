@@ -54,6 +54,20 @@ export function handleSubmit(event) {
 };
 export { handleSubmit}
 
+// Path: src/server/index.js
+const dotenv = require('dotenv');
+dotenv.config();
+const path = require('path')
+const express = require('express')
+const mockAPIResponse = require('./mockAPI.js')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const fetch = require('node-fetch');
+
+const app = express()
+
+
+
     /*fetch('http://localhost:3000/test')
     .then(res => {
         return res.json()

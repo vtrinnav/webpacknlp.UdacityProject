@@ -13,3 +13,6 @@ export function checkForName(inputText) {
     }
 };
 
+export { checkForName }
+
+

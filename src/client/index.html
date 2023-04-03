@@ -23,8 +23,12 @@
 
         <main>
             <section>
+                <p>Enter a URL to analyze the sentiment of the article</p>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <label for="name">URL:</label>
+                    <br>
                     <input id="name" type="text" name="input" value="" placeholder="enter URL to analyze">
+                    <br>
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
             </section>
@@ -32,7 +36,20 @@
             <section id="output">
                 <strong>Form Results:</strong>
                 <div class="result">
+                    <p>Model: </p>
+                    <p>Score Tag: </p>
+                    <p>Agreement: </p>
+                    <p>Subjectivity: </p>
+                    <p>Confidence: </p>
+                    <p>Irony: </p>
                 <div id="results">
+                    <p>Results:</p>
+                    <p>Model: ${data.model}</p>
+                    <p>Score Tag: ${data.score_tag}</p>
+                    <p>Agreement: ${data.agreement}</p>
+                    <p>Subjectivity: ${data.subjectivity}</p>
+                    <p>Confidence: ${data.confidence}</p>
+                    <p>Irony: ${data.irony}</p>
                 </div>      
             </section>
         </main>

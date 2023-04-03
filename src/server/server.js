@@ -53,4 +53,8 @@ app.listen(3000, function(){
     console.log('app listning on port 3000!')
 });
 
+//export app
+module.exports = app;
+
+
 

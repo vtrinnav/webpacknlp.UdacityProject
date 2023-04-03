@@ -1,4 +1,6 @@
 function checkURL (inputURL){
+    let checkURL = inputURL;
+
     if (checkURL === ""){
         alert("Please enter URL to analyze")
         return false;
@@ -12,3 +14,6 @@ function checkURL (inputURL){
 };
 
 export {checkURL};
+
+// Path: src/client/js/formHandler.js
+import { checkURL } from './checkURL'
