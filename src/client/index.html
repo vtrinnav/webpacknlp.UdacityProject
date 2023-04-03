@@ -14,30 +14,35 @@
     <body>
         <header>
             <div class="">
-                <img src=""
+                <img src="./styles//Images//NLP Small.jpeg" alt="NLP" width="50px" height="50px">
             </div>
             <div class="">
-                navigation
+                <h2> Evaluate a news article using Natural Language Processing</h2>
             </div>
         </header>
 
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input id="name" type="text" name="input" value="" placeholder="enter URL to analyze">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
             </section>
 
-            <section>
+            <section id="output">
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div class="result">
+                <div id="results">
+                </div>      
             </section>
         </main>
 
         <footer>
-            <p>2023 Viviane Trindade-Navarro</p>
+            <p>2023© Viviane Trindade-Navarro</p>
+            <a href="https://www.linkedin.com/in/vtrindadenavarro/"> <img src="./styles/Images/linkedin Small.jpeg" style="width:23px; height:25px;"></a>
+            <a href="https://github.com/vtrinnav"><img src="./styles/Images/GitHub Small.jpeg" style="width:30px;height:30px"></a>
         </footer>
+        <script src="../../dist/main.js"></script>
         <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
