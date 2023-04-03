@@ -14,6 +14,3 @@ function checkURL (inputURL){
 };
 
 export {checkURL};
-
-// Path: src/client/js/formHandler.js
-import { checkURL } from './checkURL'
