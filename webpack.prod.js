@@ -32,7 +32,8 @@ module.exports = {
             template: "./src/client/index.html",
             filename: "./index.html",
         }),
-        new CleanWebpackPlugin
+        new CleanWebpackPlugin,
+        new WorkboxPlugin.GenerateSW()
     ]
 };
 

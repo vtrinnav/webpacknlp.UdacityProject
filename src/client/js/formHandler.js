@@ -35,10 +35,16 @@ export function handleSubmit(event) {
     event.preventDefault() 
 
     // check what text was put into the form field
-    let formText = document.getElementById('url').value 
-    if (Client.checkURL(formText))
+    let formText = document.getElementById('name').value
     console.log("::: Form Submitted :::")
-
+    console.log("URL: " + url)
+    console.log("Text: " + formText)
+    if (Client.checkURL(formText))
+    {
+        alert("Please enter a valid URL");
+        return;
+    }
+    
     //POST request
     postData('http://localhost:3000/api', { text: formText })
     .then(function (data) {
