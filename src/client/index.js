@@ -1,4 +1,5 @@
 //js files
+import FormHandler from 'formhandler.js';
 import { checkForName } from './js/nameChecker'
 import { handleSubmit } from './js/formHandler'
 import { checkURL } from './js/checkURL'
@@ -10,7 +11,6 @@ import './styles/base.scss'
 import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/header.scss'
-
 
 //console.log(checkForName);
 //alert("I EXIST")
