@@ -4,20 +4,19 @@
         <meta charset="utf-8">
         <meta name="vieport" content="width=device-width, initial-scale=1.0">
         <title>Natural Language Processing</title>
-        <link rel="stylesheet" href="./styles//resets.scss">
-        <link rel="stylesheet" href="./styles/base.scss">
-        <link rel="stylesheet" href="./styles/header.scss">
-        <link rel="stylesheet" href="./styles/form.scss">
-        <link rel="stylesheet" href="./styles/footer.scss">
-        <link rel="stylesheet" href="/path/to/dir/formhandler.min.css">
+        <base href="/">
+        <link href="./styles/base.scss" rel="stylesheet"/>
+        <link href="./styles/footer.scss" rel="stylesheet"/>
+        <link href="./styles/form.scss" rel="stylesheet"/>
+        <link href="./styles/header.scss" rel="stylesheet"/>
+        <link href="./styles/resets.scss" rel="stylesheet"/>
     </head>
-
     <body>
         <header>
-            <div class="">
+            <div class="NLP app">
                 <img src="./styles//Images/NLP Small.jpeg" alt="NLP" width="50px" height="50px">
             </div>
-            <div class="">
+            <div class="title">
                 <h2> Evaluate a news article using Natural Language Processing</h2>
             </div>
         </header>
@@ -25,12 +24,13 @@
         <main>
             <section>
                 <p>Enter a URL to analyze the sentiment of the article</p>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <label for="name">URL:</label>
+                <form class="nlpForm" onsubmit = "return Client.handleSubmit(event)">
+                    <div class = "nlpForm">
+                    <label for = "name">URL:</label>
                     <br>
-                    <input id="name" type="url" name="url" value="" placeholder="https://example.com">
+                    <input type = "url" name="url" id = "url" placeholder = "https://example.com" pattern="https://.*" required>
                     <br>
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                    <input type="submit" value="submit" onclick = "return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
             </section>
 
@@ -62,31 +62,11 @@
         </footer>
         <script src="../../dist/main.js"></script>
         <script>
-           const registerServiceWorker = async () => {
             if ("serviceWorker" in navigator) {
-                try {
-                 const registration = await navigator.serviceWorker.register("/sw.js", {
-                    scope: "/",
-                 });
-                if (registration.installing) {
-                console.log("Service worker installing");
-                } else if (registration.waiting) {
-                console.log("Service worker installed");
-                } else if (registration.active) {
-                console.log("Service worker active");
-      }
-    } catch (error) {
-        console.log("Registration failed with " + error);
-    }
-  }
-};
-
-// …
-
-registerServiceWorker();
-
+               window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+               });
+            }
         </script>
-        <script src="/path/to/dir/formhandler.min.js"></script>
-
     </body>
 </html>

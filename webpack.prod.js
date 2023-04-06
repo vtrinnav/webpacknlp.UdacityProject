@@ -3,7 +3,11 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 const WorkboxPlugin = require('workbox-webpack-plugin');
+
 
 module.exports = {
     entry: './src/client/index.js',
@@ -23,17 +27,26 @@ module.exports = {
             },
             {
                 test:/\.scss$/,
-                use:[ 'style-loader', 'css-loader', 'sass-loader']
+                use:[MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
         ]
     },
+    optimization: {
+        minimizer: [
+            new TerserPlugin({}),
+            new CssMinimizerPlugin(),
+        ],
+    },
+
     plugins:[
         new HtmlWebPackPlugin({
             template: "./src/client/index.html",
             filename: "./index.html",
         }),
         new CleanWebpackPlugin,
-        new WorkboxPlugin.GenerateSW()
+        new WorkboxPlugin.GenerateSW(),
+        new MiniCssExtractPlugin({filename: '[name].scss'}),
+        new CssMinimizerPlugin()
     ]
 };
 
