@@ -43,10 +43,8 @@ module.exports = {
             template: "./src/client/index.html",
             filename: "./index.html",
         }),
-        new CleanWebpackPlugin,
-        new WorkboxPlugin.GenerateSW(),
-        new MiniCssExtractPlugin({filename: '[name].scss'}),
-        new CssMinimizerPlugin()
+        new MiniCssExtractPlugin({filename: '[name].css'}),
+        new WorkboxPlugin.GenerateSW()
     ]
 };
 
